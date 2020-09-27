@@ -1,0 +1,484 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 11.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     13741,        476]
+NotebookOptionsPosition[     12242,        420]
+NotebookOutlinePosition[     12606,        436]
+CellTagsIndexPosition[     12563,        433]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[" algebra - collective radiance", "Title",
+ CellChangeTimes->{{3.8102212264406447`*^9, 3.8102212282737403`*^9}, {
+  3.8102212594304037`*^9, 3.8102212664825425`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell["Field seen by one dipole by another", "Section",
+ CellChangeTimes->{{3.810221284124322*^9, 3.810221324524285*^9}}],
+
+Cell["\<\
+Considering atoms with a J=0->J\[CloseCurlyQuote]=1 transition. The upper \
+level has three Zeeman substates. Supposing x-polarized atoms, is radiation \
+from such an atom seen by another different from the case where the atoms \
+have a J=0->J\[CloseCurlyQuote]=1 transition?  \
+\>", "Text",
+ CellChangeTimes->{{3.810221380157988*^9, 3.810221419286522*^9}, {
+  3.8102214761729345`*^9, 3.810221495425583*^9}, {3.8102215421265755`*^9, 
+  3.8102215707845817`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GTensor", " ", "=", " ", 
+  RowBox[{"Table", "[", 
+   RowBox[{
+    SubscriptBox["G", 
+     RowBox[{"\[Alpha]", ",", "\[Beta]"}]], ",", 
+    RowBox[{"{", 
+     RowBox[{"\[Alpha]", ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"\[Beta]", ",", 
+      RowBox[{"{", 
+       RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.810221584233219*^9, 3.810221650955435*^9}, {
+  3.810223895762165*^9, 3.810223895972419*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["G", 
+      RowBox[{"x", ",", "x"}]], ",", 
+     SubscriptBox["G", 
+      RowBox[{"x", ",", "y"}]], ",", 
+     SubscriptBox["G", 
+      RowBox[{"x", ",", "z"}]]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["G", 
+      RowBox[{"y", ",", "x"}]], ",", 
+     SubscriptBox["G", 
+      RowBox[{"y", ",", "y"}]], ",", 
+     SubscriptBox["G", 
+      RowBox[{"y", ",", "z"}]]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     SubscriptBox["G", 
+      RowBox[{"z", ",", "x"}]], ",", 
+     SubscriptBox["G", 
+      RowBox[{"z", ",", "y"}]], ",", 
+     SubscriptBox["G", 
+      RowBox[{"z", ",", "z"}]]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.8102238964049153`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      SubscriptBox["G", 
+       RowBox[{"x", ",", "x"}]], ",", 
+      SubscriptBox["G", 
+       RowBox[{"x", ",", "y"}]], ",", 
+      SubscriptBox["G", 
+       RowBox[{"x", ",", "z"}]]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      SubscriptBox["G", 
+       RowBox[{"y", ",", "x"}]], ",", 
+      SubscriptBox["G", 
+       RowBox[{"y", ",", "y"}]], ",", 
+      SubscriptBox["G", 
+       RowBox[{"y", ",", "z"}]]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      SubscriptBox["G", 
+       RowBox[{"z", ",", "x"}]], ",", 
+      SubscriptBox["G", 
+       RowBox[{"z", ",", "y"}]], ",", 
+      SubscriptBox["G", 
+       RowBox[{"z", ",", "z"}]]}], "}"}]}], "}"}], "//", "MatrixForm"}]], \
+"Input",
+ CellChangeTimes->{{3.810221694110799*^9, 3.8102216972589045`*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {
+      SubscriptBox["G", 
+       RowBox[{"x", ",", "x"}]], 
+      SubscriptBox["G", 
+       RowBox[{"x", ",", "y"}]], 
+      SubscriptBox["G", 
+       RowBox[{"x", ",", "z"}]]},
+     {
+      SubscriptBox["G", 
+       RowBox[{"y", ",", "x"}]], 
+      SubscriptBox["G", 
+       RowBox[{"y", ",", "y"}]], 
+      SubscriptBox["G", 
+       RowBox[{"y", ",", "z"}]]},
+     {
+      SubscriptBox["G", 
+       RowBox[{"z", ",", "x"}]], 
+      SubscriptBox["G", 
+       RowBox[{"z", ",", "y"}]], 
+      SubscriptBox["G", 
+       RowBox[{"z", ",", "z"}]]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Center}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[0.7]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}], "\[NoBreak]", ")"}],
+  Function[BoxForm`e$, 
+   MatrixForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{3.810221697676651*^9}]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"xpol", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ypol", "=", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "0"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"zpol", " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"splus", " ", "=", " ", 
+   RowBox[{
+    FractionBox[
+     RowBox[{"-", "1"}], 
+     SqrtBox["2"]], 
+    RowBox[{"(", 
+     RowBox[{"xpol", "-", 
+      RowBox[{"\[ImaginaryI]", " ", "ypol"}]}], ")"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sminus", " ", "=", " ", 
+   RowBox[{
+    FractionBox["1", 
+     SqrtBox["2"]], 
+    RowBox[{"(", 
+     RowBox[{"xpol", "+", 
+      RowBox[{"\[ImaginaryI]", " ", "ypol"}]}], ")"}]}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.8102216997547293`*^9, 3.810221814008733*^9}, 
+   3.8102219055906525`*^9, {3.810221963183197*^9, 3.810221974109209*^9}, {
+   3.810222079676343*^9, 3.810222082355562*^9}, 3.810222125942828*^9, 
+   3.810222203134242*^9, {3.8102225685281277`*^9, 3.810222615207246*^9}, {
+   3.8102232843627167`*^9, 3.8102232845717764`*^9}, 3.810223337482185*^9}],
+
+Cell["Check: ", "Text",
+ CellChangeTimes->{{3.810221815816111*^9, 3.810221827375613*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   FractionBox["1", 
+    SqrtBox["2"]], 
+   RowBox[{"(", 
+    RowBox[{"sminus", " ", "-", " ", "splus"}], ")"}]}], "\[Equal]", 
+  "xpol"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   FractionBox[
+    RowBox[{"-", "\[ImaginaryI]"}], 
+    SqrtBox["2"]], 
+   RowBox[{"(", 
+    RowBox[{"sminus", "+", "splus"}], ")"}]}], "\[Equal]", "ypol"}]}], "Input",
+ CellChangeTimes->{{3.810222617598696*^9, 3.810222641088807*^9}, {
+  3.810223298133724*^9, 3.8102233333379755`*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.8102226239068594`*^9, 3.8102226418580556`*^9}, {
+  3.8102232895610456`*^9, 3.8102233338439145`*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.8102226239068594`*^9, 3.8102226418580556`*^9}, {
+  3.8102232895610456`*^9, 3.810223333848899*^9}}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Atom in excited state with x-polarization has the following Zeeman state, \
+in the spherical basis ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", 
+    RowBox[{
+     SubscriptBox["\[Sigma]", "-"], ",", 
+     SubscriptBox["\[Sigma]", "0"], ",", 
+     SubscriptBox["\[Sigma]", "+"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "): ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", 
+      SqrtBox["2"]], ",", "0", ",", 
+     FractionBox[
+      RowBox[{"-", "1"}], 
+      SqrtBox["2"]]}], "}"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ". The field emitted by the dipole is the sum of the field emitted by each \
+Zeeman substate contribution (spatial coordinates suppressed):"
+}], "Text",
+ CellChangeTimes->{{3.8102222080123835`*^9, 3.8102222107907715`*^9}, {
+  3.810223478001294*^9, 3.810223621672299*^9}, {3.8102236572597933`*^9, 
+  3.810223705903698*^9}, {3.8102237794648*^9, 3.8102238399493723`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"(", 
+  RowBox[{
+   SubscriptBox["\[Sigma]", "+"], " ", 
+   RowBox[{"contribution", ":"}]}], ")"}]], "Input",
+ CellChangeTimes->{{3.81022384623689*^9, 3.8102238600902495`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GTensor", ".", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"-", 
+     FractionBox["1", 
+      SqrtBox["2"]]}], "splus"}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.8102237078057632`*^9, 3.810223755179183*^9}, {
+  3.8102238723185573`*^9, 3.8102238744445667`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     SubscriptBox["G", 
+      RowBox[{"x", ",", "x"}]], "2"], "-", 
+    RowBox[{
+     FractionBox["1", "2"], " ", "\[ImaginaryI]", " ", 
+     SubscriptBox["G", 
+      RowBox[{"x", ",", "y"}]]}]}], ",", 
+   RowBox[{
+    FractionBox[
+     SubscriptBox["G", 
+      RowBox[{"y", ",", "x"}]], "2"], "-", 
+    RowBox[{
+     FractionBox["1", "2"], " ", "\[ImaginaryI]", " ", 
+     SubscriptBox["G", 
+      RowBox[{"y", ",", "y"}]]}]}], ",", 
+   RowBox[{
+    FractionBox[
+     SubscriptBox["G", 
+      RowBox[{"z", ",", "x"}]], "2"], "-", 
+    RowBox[{
+     FractionBox["1", "2"], " ", "\[ImaginaryI]", " ", 
+     SubscriptBox["G", 
+      RowBox[{"z", ",", "y"}]]}]}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.8102238785491595`*^9, 3.81022389938601*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"(", 
+  RowBox[{
+   SubscriptBox["\[Sigma]", "-"], " ", 
+   RowBox[{"cont", "."}]}], ")"}]], "Input",
+ CellChangeTimes->{{3.810223904749201*^9, 3.810223911519167*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GTensor", ".", 
+  RowBox[{"(", 
+   RowBox[{
+    FractionBox["1", 
+     SqrtBox["2"]], "sminus"}], ")"}]}]], "Input",
+ CellChangeTimes->{{3.8102239207984233`*^9, 3.8102239319095755`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     SubscriptBox["G", 
+      RowBox[{"x", ",", "x"}]], "2"], "+", 
+    RowBox[{
+     FractionBox["1", "2"], " ", "\[ImaginaryI]", " ", 
+     SubscriptBox["G", 
+      RowBox[{"x", ",", "y"}]]}]}], ",", 
+   RowBox[{
+    FractionBox[
+     SubscriptBox["G", 
+      RowBox[{"y", ",", "x"}]], "2"], "+", 
+    RowBox[{
+     FractionBox["1", "2"], " ", "\[ImaginaryI]", " ", 
+     SubscriptBox["G", 
+      RowBox[{"y", ",", "y"}]]}]}], ",", 
+   RowBox[{
+    FractionBox[
+     SubscriptBox["G", 
+      RowBox[{"z", ",", "x"}]], "2"], "+", 
+    RowBox[{
+     FractionBox["1", "2"], " ", "\[ImaginaryI]", " ", 
+     SubscriptBox["G", 
+      RowBox[{"z", ",", "y"}]]}]}]}], "}"}]], "Output",
+ CellChangeTimes->{3.810223932724162*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"GTensor", ".", 
+   RowBox[{"(", 
+    RowBox[{
+     FractionBox["1", 
+      SqrtBox["2"]], "sminus"}], ")"}]}], "+", 
+  RowBox[{"GTensor", ".", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["1", 
+       SqrtBox["2"]]}], "splus"}], ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.8102239524447517`*^9, 3.8102239536077976`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   SubscriptBox["G", 
+    RowBox[{"x", ",", "x"}]], ",", 
+   SubscriptBox["G", 
+    RowBox[{"y", ",", "x"}]], ",", 
+   SubscriptBox["G", 
+    RowBox[{"z", ",", "x"}]]}], "}"}]], "Output",
+ CellChangeTimes->{3.8102239547700353`*^9}]
+}, Open  ]],
+
+Cell["\<\
+Compare to the field emitted by an atomic dipole whose excited state has no \
+Zeeman substructure (i.e. J=0). \
+\>", "Text",
+ CellChangeTimes->{{3.810223983251403*^9, 3.810224036330098*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GTensor", ".", "xpol"}]], "Input",
+ CellChangeTimes->{{3.810224025323607*^9, 3.8102240435309887`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   SubscriptBox["G", 
+    RowBox[{"x", ",", "x"}]], ",", 
+   SubscriptBox["G", 
+    RowBox[{"y", ",", "x"}]], ",", 
+   SubscriptBox["G", 
+    RowBox[{"z", ",", "x"}]]}], "}"}]], "Output",
+ CellChangeTimes->{3.810224044356291*^9}]
+}, Open  ]],
+
+Cell["\<\
+The emission pattern of a polarized atom in an excited state has a \
+superposition of Zeeman substates such that radiation contributions from each \
+substate sum to give emission equivalent to that of an x-polarized dipole \
+with no substructure.\
+\>", "Text",
+ CellChangeTimes->{{3.8102282303445463`*^9, 3.810228307742426*^9}}]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{759, 677},
+WindowMargins->{{Automatic, 345}, {39, Automatic}},
+Magnification->1.25,
+FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 170, 2, 127, "Title"],
+Cell[CellGroupData[{
+Cell[775, 28, 120, 1, 86, "Section"],
+Cell[898, 31, 471, 8, 113, "Text"],
+Cell[CellGroupData[{
+Cell[1394, 43, 554, 15, 39, "Input"],
+Cell[1951, 60, 772, 27, 39, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2760, 92, 855, 29, 63, InheritFromParent],
+Cell[3618, 123, 1145, 37, 99, "Output"]
+}, Open  ]],
+Cell[4778, 163, 1270, 35, 203, "Input"],
+Cell[6051, 200, 89, 1, 38, "Text"],
+Cell[CellGroupData[{
+Cell[6165, 205, 507, 16, 130, "Input"],
+Cell[6675, 223, 154, 2, 37, "Output"],
+Cell[6832, 227, 152, 2, 37, "Output"]
+}, Open  ]],
+Cell[6999, 232, 974, 27, 130, "Text"],
+Cell[7976, 261, 199, 5, 37, "Input"],
+Cell[CellGroupData[{
+Cell[8200, 270, 282, 8, 72, "Input"],
+Cell[8485, 280, 816, 27, 55, "Output"]
+}, Open  ]],
+Cell[9316, 310, 190, 5, 37, "Input"],
+Cell[CellGroupData[{
+Cell[9531, 319, 210, 6, 72, "Input"],
+Cell[9744, 327, 791, 27, 55, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10572, 359, 377, 13, 72, "Input"],
+Cell[10952, 374, 271, 9, 39, "Output"]
+}, Open  ]],
+Cell[11238, 386, 200, 4, 63, "Text"],
+Cell[CellGroupData[{
+Cell[11463, 394, 126, 2, 37, "Input"],
+Cell[11592, 398, 269, 9, 39, "Output"]
+}, Open  ]],
+Cell[11876, 410, 338, 6, 113, "Text"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
