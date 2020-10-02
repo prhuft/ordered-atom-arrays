@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     13741,        476]
-NotebookOptionsPosition[     12242,        420]
-NotebookOutlinePosition[     12606,        436]
-CellTagsIndexPosition[     12563,        433]
+NotebookDataLength[     20788,        701]
+NotebookOptionsPosition[     18314,        614]
+NotebookOutlinePosition[     18675,        630]
+CellTagsIndexPosition[     18632,        627]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -26,8 +26,9 @@ Cell[" algebra - collective radiance", "Title",
 
 Cell[CellGroupData[{
 
-Cell["Field seen by one dipole by another", "Section",
- CellChangeTimes->{{3.810221284124322*^9, 3.810221324524285*^9}}],
+Cell["Field seen from one dipole by another", "Section",
+ CellChangeTimes->{{3.810221284124322*^9, 3.810221324524285*^9}, {
+  3.8105534451169405`*^9, 3.810553446381278*^9}}],
 
 Cell["\<\
 Considering atoms with a J=0->J\[CloseCurlyQuote]=1 transition. The upper \
@@ -415,11 +416,204 @@ substate sum to give emission equivalent to that of an x-polarized dipole \
 with no substructure.\
 \>", "Text",
  CellChangeTimes->{{3.8102282303445463`*^9, 3.810228307742426*^9}}]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Atom positions in harmonic trap", "Section",
+ CellChangeTimes->{{3.8105534555520306`*^9, 3.8105534636038184`*^9}}],
+
+Cell["Harmonic potential (treat as 1D for now, extend later)", "Text",
+ CellChangeTimes->{{3.8105561668747377`*^9, 3.810556171024639*^9}, {
+  3.8105568512486205`*^9, 3.8105568604590197`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", 
+  RowBox[{
+  "\[Kappa]", ",", "x", ",", "\[Omega]", ",", "k", ",", "m", ",", "V", ",", 
+   "U"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8105760067684555`*^9, 3.810576022732441*^9}}],
+
+Cell[BoxData[
+ RowBox[{"V", " ", "=", " ", 
+  RowBox[{
+   RowBox[{
+    FractionBox["1", "2"], "\[Kappa]", " ", 
+    SuperscriptBox["x", "2"]}], "=", 
+   RowBox[{
+    FractionBox["1", "2"], "m", " ", 
+    SuperscriptBox["\[Omega]", "2"], 
+    SuperscriptBox["x", "2"]}]}]}]], "Input",
+ CellChangeTimes->{{3.8105561732536793`*^9, 3.81055619619125*^9}, {
+  3.8105759707889175`*^9, 3.810575981358633*^9}}],
+
+Cell["what is k for a dipole trap?", "Text",
+ CellChangeTimes->{{3.810556254856366*^9, 3.810556261589358*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"U", "[", "x_", "]"}], " ", "=", " ", 
+   RowBox[{"kB", " ", "T", " ", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{
+      RowBox[{"-", "2"}], 
+      RowBox[{
+       SuperscriptBox["x", "2"], "/", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox["wx", "2"], 
+         RowBox[{"(", 
+          RowBox[{"1", "+", 
+           RowBox[{
+            SuperscriptBox["z", "2"], "/", 
+            SuperscriptBox["zR", "2"]}]}], ")"}]}], ")"}]}]}]]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"\[Kappa]", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"U", "''"}], "[", "x", "]"}], "/.", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"z", "\[Rule]", " ", "0"}], ",", 
+     RowBox[{"x", "\[Rule]", "0"}]}], "}"}]}]}]}], "Input",
+ CellChangeTimes->{{3.8105564796508784`*^9, 3.810556780392168*^9}, 
+   3.8105759900962515`*^9}],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  FractionBox[
+   RowBox[{"4", " ", "kB", " ", "T"}], 
+   SuperscriptBox["wx", "2"]]}]], "Output",
+ CellChangeTimes->{{3.8105566565035133`*^9, 3.8105567261951427`*^9}, {
+   3.8105567619584465`*^9, 3.810556780932695*^9}, 3.8105760462382774`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"\[Omega]", " ", "=", 
+  SqrtBox[
+   FractionBox["\[Kappa]", "m"]], " "}]], "Input",
+ CellChangeTimes->{{3.810556794194224*^9, 3.810556822567361*^9}, 
+   3.810576003601981*^9}],
+
+Cell[BoxData[
+ RowBox[{"2", " ", 
+  SqrtBox[
+   RowBox[{"-", 
+    FractionBox[
+     RowBox[{"kB", " ", "T"}], 
+     RowBox[{"m", " ", 
+      SuperscriptBox["wx", "2"]}]]}]]}]], "Output",
+ CellChangeTimes->{3.8105568249130907`*^9, 3.8105760488146725`*^9}]
+}, Open  ]],
+
+Cell["\<\
+Given T, m, wx could deduce what harmonic energy level our atom is in, then \
+use the level index to get the wavefunction and corresponding characteristic \
+width? But for a higher T several vibrational levels are excited so we can \
+estimate the positional variation with Boltzmann factors. \
+\>", "Text",
+ CellChangeTimes->{{3.810556881245387*^9, 3.810556950636812*^9}, {
+  3.8105922814634514`*^9, 3.8105923297278576`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   FractionBox["1", "2"], "\[Kappa]", " ", 
+   OverscriptBox[
+    SuperscriptBox["x", "2"], "_"]}], "=", 
+  RowBox[{
+   FractionBox["1", "2"], "kB", " ", "Tatom"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  OverscriptBox[
+   SuperscriptBox["x", "2"], "_"], "=", 
+  RowBox[{
+   FractionBox[
+    RowBox[{"kB", " ", "Tatom"}], "\[Kappa]"], "=", 
+   RowBox[{
+    FractionBox[
+     RowBox[{"kB", " ", "Tatom"}], 
+     FractionBox[
+      RowBox[{"4", " ", "kB", " ", "Ttrap"}], 
+      SuperscriptBox["wx", "2"]]], "=", 
+    RowBox[{
+     FractionBox[
+      RowBox[{" ", 
+       SuperscriptBox["wx", "2"]}], "4"], 
+     FractionBox["Tatom", "Ttrap"]}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  OverscriptBox[
+   SuperscriptBox["z", "2"], "_"], "=", 
+  RowBox[{
+   FractionBox["1", "2"], 
+   SuperscriptBox["zR", "2"], 
+   FractionBox["Tatom", "Ttrap"]}]}]}], "Input",
+ CellChangeTimes->{{3.810556776271165*^9, 3.8105567774231176`*^9}, {
+  3.810592360176551*^9, 3.810592635992515*^9}, {3.8105929081464915`*^9, 
+  3.8105929484460907`*^9}}],
+
+Cell["Set Ttrap to 100Trecoil", "Text",
+ CellChangeTimes->{{3.810592663298849*^9, 3.810592695081791*^9}, {
+  3.8105927367085485`*^9, 3.8105927430655885`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Trecoil", " ", "=", " ", 
+  FractionBox[
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"\[HBar]", " ", "k"}], ")"}], "2"], 
+   RowBox[{"2", " ", "m"}]]}]], "Input",
+ CellChangeTimes->{{3.810592697811468*^9, 3.8105927289259963`*^9}}],
+
+Cell["How deep do we tend to set our atomic traps?", "Text",
+ CellChangeTimes->{{3.8105927676531105`*^9, 3.81059277798637*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FractionBox["4*^-5", "2*^-3"]], "Input",
+ CellChangeTimes->{{3.8105927926360135`*^9, 3.8105928193543134`*^9}}],
+
+Cell[BoxData[
+ FractionBox["1", "50"]], "Output",
+ CellChangeTimes->{3.8105928115098658`*^9}]
+}, Open  ]],
+
+Cell["Trap depth 50 times atom energy", "Text",
+ CellChangeTimes->{{3.8105928231548944`*^9, 3.8105928392923527`*^9}}],
+
+Cell["Want positional deviations of the atom << \[Lambda] ~ 1*^-6", "Text",
+ CellChangeTimes->{{3.8105928473197107`*^9, 3.8105928987322416`*^9}, {
+  3.8105930064051466`*^9, 3.8105930114359837`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  SqrtBox[
+   RowBox[{
+    FractionBox[
+     SuperscriptBox[
+      RowBox[{"(", "1*^-6", ")"}], "2"], "4"], 
+    FractionBox["1", "50"]}]], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.81059297548657*^9, 3.8105930025922413`*^9}, {
+  3.81059303764601*^9, 3.81059310934866*^9}}],
+
+Cell[BoxData["7.071067811865474`*^-8"], "Output",
+ CellChangeTimes->{{3.8105930808612823`*^9, 3.8105931106803293`*^9}}]
+}, Open  ]],
+
+Cell["this gives positional std of ~ \[Lambda]/10 for Alkali D2 lines", "Text",
+ CellChangeTimes->{{3.8105931201925364`*^9, 3.81059316359144*^9}}]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{759, 677},
-WindowMargins->{{Automatic, 345}, {39, Automatic}},
+WindowSize->{766, 812},
+WindowMargins->{{Automatic, 0}, {Automatic, 0}},
 Magnification->1.25,
 FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
 StyleDefinitions->"Default.nb"
@@ -438,44 +632,75 @@ Notebook[{
 Cell[CellGroupData[{
 Cell[580, 22, 170, 2, 127, "Title"],
 Cell[CellGroupData[{
-Cell[775, 28, 120, 1, 86, "Section"],
-Cell[898, 31, 471, 8, 113, "Text"],
+Cell[775, 28, 173, 2, 86, "Section"],
+Cell[951, 32, 471, 8, 110, "Text"],
 Cell[CellGroupData[{
-Cell[1394, 43, 554, 15, 39, "Input"],
-Cell[1951, 60, 772, 27, 39, "Output"]
+Cell[1447, 44, 554, 15, 48, "Input"],
+Cell[2004, 61, 772, 27, 48, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2760, 92, 855, 29, 63, InheritFromParent],
-Cell[3618, 123, 1145, 37, 99, "Output"]
+Cell[2813, 93, 855, 29, 48, "Input"],
+Cell[3671, 124, 1145, 37, 102, "Output"]
 }, Open  ]],
-Cell[4778, 163, 1270, 35, 203, "Input"],
-Cell[6051, 200, 89, 1, 38, "Text"],
+Cell[4831, 164, 1270, 35, 253, "Input"],
+Cell[6104, 201, 89, 1, 47, "Text"],
 Cell[CellGroupData[{
-Cell[6165, 205, 507, 16, 130, "Input"],
-Cell[6675, 223, 154, 2, 37, "Output"],
-Cell[6832, 227, 152, 2, 37, "Output"]
+Cell[6218, 206, 507, 16, 162, "Input"],
+Cell[6728, 224, 154, 2, 46, "Output"],
+Cell[6885, 228, 152, 2, 46, "Output"]
 }, Open  ]],
-Cell[6999, 232, 974, 27, 130, "Text"],
-Cell[7976, 261, 199, 5, 37, "Input"],
+Cell[7052, 233, 974, 27, 131, "Text"],
+Cell[8029, 262, 199, 5, 46, "Input"],
 Cell[CellGroupData[{
-Cell[8200, 270, 282, 8, 72, "Input"],
-Cell[8485, 280, 816, 27, 55, "Output"]
+Cell[8253, 271, 282, 8, 90, "Input"],
+Cell[8538, 281, 816, 27, 68, "Output"]
 }, Open  ]],
-Cell[9316, 310, 190, 5, 37, "Input"],
+Cell[9369, 311, 190, 5, 46, "Input"],
 Cell[CellGroupData[{
-Cell[9531, 319, 210, 6, 72, "Input"],
-Cell[9744, 327, 791, 27, 55, "Output"]
+Cell[9584, 320, 210, 6, 90, "Input"],
+Cell[9797, 328, 791, 27, 68, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[10572, 359, 377, 13, 72, "Input"],
-Cell[10952, 374, 271, 9, 39, "Output"]
+Cell[10625, 360, 377, 13, 90, "Input"],
+Cell[11005, 375, 271, 9, 48, "Output"]
 }, Open  ]],
-Cell[11238, 386, 200, 4, 63, "Text"],
+Cell[11291, 387, 200, 4, 78, "Text"],
 Cell[CellGroupData[{
-Cell[11463, 394, 126, 2, 37, "Input"],
-Cell[11592, 398, 269, 9, 39, "Output"]
+Cell[11516, 395, 126, 2, 46, "Input"],
+Cell[11645, 399, 269, 9, 48, "Output"]
 }, Open  ]],
-Cell[11876, 410, 338, 6, 113, "Text"]
+Cell[11929, 411, 338, 6, 110, "Text"]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[12304, 422, 120, 1, 68, "Section"],
+Cell[12427, 425, 191, 2, 38, "Text"],
+Cell[12621, 429, 220, 5, 37, "Input"],
+Cell[12844, 436, 401, 11, 61, "Input"],
+Cell[13248, 449, 110, 1, 38, "Text"],
+Cell[CellGroupData[{
+Cell[13383, 454, 877, 28, 69, "Input"],
+Cell[14263, 484, 273, 6, 57, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14573, 495, 199, 5, 68, "Input"],
+Cell[14775, 502, 254, 8, 66, "Output"]
+}, Open  ]],
+Cell[15044, 513, 435, 7, 113, "Text"],
+Cell[15482, 522, 1063, 34, 191, "Input"],
+Cell[16548, 558, 158, 2, 38, "Text"],
+Cell[16709, 562, 260, 7, 66, "Input"],
+Cell[16972, 571, 127, 1, 38, "Text"],
+Cell[CellGroupData[{
+Cell[17124, 576, 125, 2, 61, "Input"],
+Cell[17252, 580, 93, 2, 54, "Output"]
+}, Open  ]],
+Cell[17360, 585, 117, 1, 38, "Text"],
+Cell[17480, 588, 198, 2, 38, "Text"],
+Cell[CellGroupData[{
+Cell[17703, 594, 300, 9, 83, "Input"],
+Cell[18006, 605, 119, 1, 37, "Output"]
+}, Open  ]],
+Cell[18140, 609, 146, 1, 38, "Text"]
 }, Open  ]]
 }, Open  ]]
 }
