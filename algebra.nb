@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     20788,        701]
-NotebookOptionsPosition[     18314,        614]
-NotebookOutlinePosition[     18675,        630]
-CellTagsIndexPosition[     18632,        627]
+NotebookDataLength[     21856,        735]
+NotebookOptionsPosition[     19302,        646]
+NotebookOutlinePosition[     19664,        662]
+CellTagsIndexPosition[     19621,        659]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -608,12 +608,44 @@ Cell[BoxData["7.071067811865474`*^-8"], "Output",
 }, Open  ]],
 
 Cell["this gives positional std of ~ \[Lambda]/10 for Alkali D2 lines", "Text",
- CellChangeTimes->{{3.8105931201925364`*^9, 3.81059316359144*^9}}]
+ CellChangeTimes->{{3.8105931201925364`*^9, 3.81059316359144*^9}}],
+
+Cell["Get quantitative sense of trap depth", "Text",
+ CellChangeTimes->{{3.8106614414039955`*^9, 3.810661463045481*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"mRb", " ", "=", " ", 
+    RowBox[{"86.909*^-3", "*", 
+     FractionBox["1", "6.022*^23"]}]}], ";"}], 
+  RowBox[{"(*", 
+   RowBox[{"[", "kg", "]"}], "*)"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Trecoil", " ", "=", " ", 
+   RowBox[{
+    FractionBox[
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"\[HBar]", " ", "k"}], ")"}], "2"], 
+     RowBox[{"2", " ", "kB", " ", "mRb"}]], "/", 
+    SuperscriptBox["10", 
+     RowBox[{"-", "6"}]]}]}], 
+  RowBox[{"(*", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{
+      "recoil", " ", "temp", " ", "of", " ", "Rb", " ", "D2", " ", "line"}], 
+      ".."}], " ", "seems", " ", "low"}], ",", " ", 
+    RowBox[{"double", " ", "check"}]}], 
+   "*)"}]}], "\[IndentingNewLine]"}], "Input",
+ CellChangeTimes->{{3.81066146611597*^9, 3.8106614750520124`*^9}}]
 }, Open  ]]
 }, Open  ]]
 },
 WindowSize->{766, 812},
-WindowMargins->{{Automatic, 0}, {Automatic, 0}},
+WindowMargins->{{-7, Automatic}, {Automatic, 0}},
 Magnification->1.25,
 FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
 StyleDefinitions->"Default.nb"
@@ -700,7 +732,9 @@ Cell[CellGroupData[{
 Cell[17703, 594, 300, 9, 83, "Input"],
 Cell[18006, 605, 119, 1, 37, "Output"]
 }, Open  ]],
-Cell[18140, 609, 146, 1, 38, "Text"]
+Cell[18140, 609, 146, 1, 38, "Text"],
+Cell[18289, 612, 120, 1, 38, "Text"],
+Cell[18412, 615, 862, 27, 170, "Input"]
 }, Open  ]]
 }, Open  ]]
 }
