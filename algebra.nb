@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    142358,       2747]
-NotebookOptionsPosition[    139447,       2648]
-NotebookOutlinePosition[    139809,       2664]
-CellTagsIndexPosition[    139766,       2661]
+NotebookDataLength[    146839,       2880]
+NotebookOptionsPosition[    143841,       2779]
+NotebookOutlinePosition[    144203,       2795]
+CellTagsIndexPosition[    144160,       2792]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -654,12 +654,13 @@ Cell[BoxData[{
     RowBox[{"double", " ", "check"}]}], 
    "*)"}]}], "\[IndentingNewLine]"}], "Input",
  CellChangeTimes->{{3.81066146611597*^9, 3.8106614750520124`*^9}}]
-}, Open  ]],
+}, Closed]],
 
 Cell[CellGroupData[{
 
-Cell["Rydberg interactions", "Section",
- CellChangeTimes->{{3.8112501897107935`*^9, 3.8112502042946515`*^9}}],
+Cell["Rydberg interactions and long-lived states", "Section",
+ CellChangeTimes->{{3.8112501897107935`*^9, 3.8112502042946515`*^9}, {
+  3.8114400062977686`*^9, 3.8114400104897604`*^9}}],
 
 Cell[TextData[{
  "we now want to extend the model of each atom to include a Rydberg state ",
@@ -673,8 +674,7 @@ Cell[TextData[{
  " by a field of coupling strength ",
  Cell[BoxData[
   FormBox[
-   SubscriptBox["\[CapitalOmega]", "r"], TraditionalForm]],
-  FormatType->"TraditionalForm"],
+   SubscriptBox["\[CapitalOmega]", "r"], TraditionalForm]]],
  ". In addition, we now need to account for  Rydberg-Rydberg interactions in \
 the interaction part of the Hamiltonian."
 }], "Text",
@@ -2630,24 +2630,155 @@ oIACCiiggAIKKKCAAgoooIACCnwx/g9IWcK5
   ImageSizeRaw->{527, 488},
   PlotRange->{{0, 527}, {0, 488}}]], "Input"],
 
-Cell[BoxData[
- SubscriptBox["H", "ij\[Mu]\[Nu]"]], "Input",
- CellChangeTimes->{{3.811252225902853*^9, 3.81125224196126*^9}}],
+Cell[TextData[{
+ "Assume that the Rydberg state only couples to one intermediate excited \
+state ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["e", "\[Nu]"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ", a that a sufficiently large Zeeman shift is present on the |e> states so \
+population transfer to all Zeeman substates except ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["e", "\[Nu]"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " can be neglected. The Hamiltonian matrix elements are then: (see my \
+scanned handwritten notes)"
+}], "Text",
+ CellChangeTimes->{{3.811252225902853*^9, 3.81125224196126*^9}, {
+  3.811420602608529*^9, 3.8114208482608194`*^9}, {3.81142089194643*^9, 
+  3.811420906256134*^9}, {3.8114360876898837`*^9, 3.8114361092335453`*^9}}],
 
-Cell["\<\
-To take coherence into account we need to use a density matrix formalism and \
-solve the master eq rather than the Schrodinger eq.\
-\>", "Text",
- CellChangeTimes->{{3.8112515468479757`*^9, 3.8112515594148426`*^9}, {
-  3.8112521466103888`*^9, 3.8112522011928363`*^9}}],
+Cell[TextData[{
+ "Simulate: for now, assume that the long-lived atomic state is a ground \
+state hyperfine level |1>. Then for concreteness, we can prepare the atom \
+grid in a W-state ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    TemplateBox[{OverscriptBox["1", "_"]},
+     "Ket"], "=", 
+    RowBox[{
+     SubscriptBox["\[CapitalSigma]", "j"], 
+     TemplateBox[{RowBox[{
+         SubscriptBox["0", "1"], ",", "...", ",", " ", 
+         SubscriptBox["1", "j"], ",", 
+         RowBox[{"...", 
+           SubscriptBox["0", "N"]}]}]},
+      "Ket"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " (as we would in Rb lab). To release the excitation, we turn on the fields ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[CapitalOmega]", 
+    RowBox[{"780", "B"}]], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[CapitalOmega]", "480"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " for time ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"\[Pi]", "/", 
+    SubscriptBox["\[CapitalOmega]", "eff"]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " (no ",
+ Cell[BoxData[
+  FormBox[
+   SqrtBox["N"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " enhancement going from one singly-excited state to another) to rotate the \
+singly-excited Rydberg state ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    TemplateBox[{OverscriptBox["r", "_"]},
+     "Ket"], "=", 
+    RowBox[{
+     SubscriptBox["\[CapitalSigma]", "j"], 
+     TemplateBox[{RowBox[{
+         SubscriptBox["0", "1"], ",", "...", ",", " ", 
+         SubscriptBox["r", "j"], ",", 
+         RowBox[{"...", 
+           SubscriptBox["0", "N"]}]}]},
+      "Ket"]}]}], TraditionalForm]]],
+ ". After this, the ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[CapitalOmega]", "480"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " alone can be turned on for some time (with a specially curated pulse-shape \
+if desired, e.g. STIRAP stuff?) to couple ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[{OverscriptBox["r", "_"]},
+    "Ket"], TraditionalForm]]],
+ " to the intermediate excited states of interest ",
+ Cell[BoxData[
+  TemplateBox[{SubscriptBox["e", "\[Nu]"]},
+   "Ket"]]],
+ ". From here, we look at the decay and emission as usual. \n\nTo simplify \
+this discussion theoretically, we can assume the pulse sequence going from ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    TemplateBox[{OverscriptBox["1", "_"]},
+     "Ket"], "\[Rule]", 
+    TemplateBox[{OverscriptBox["r", "_"]},
+     "Ket"]}], TraditionalForm]]],
+ " then turning on ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[CapitalOmega]", "480"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " to couple to the intermediate excited state is all bundled up and \
+accomplished merely by applying the field ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[CapitalOmega]", "r"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"(", 
+    SubscriptBox["\[CapitalOmega]", "L"]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " in Molmer paper) to couple the atoms directly from ",
+ Cell[BoxData[
+  FormBox[
+   TemplateBox[{OverscriptBox["1", "_"]},
+    "Ket"], TraditionalForm]]],
+ " to ",
+ Cell[BoxData[
+  TemplateBox[{SubscriptBox[
+     SuperscriptBox["e", 
+      RowBox[{"(", "j", ")"}]], "\[Nu]"]},
+   "Ket"]]],
+ ".  "
+}], "Text",
+ CellChangeTimes->{
+  3.81142090739927*^9, {3.81143608427258*^9, 3.8114360853359146`*^9}, {
+   3.81143924773864*^9, 3.8114395826223135`*^9}, {3.811439616751676*^9, 
+   3.8114397662152185`*^9}, {3.8114398049071093`*^9, 3.811439957695962*^9}, {
+   3.811440027910573*^9, 3.8114400535962257`*^9}, {3.8114401250411377`*^9, 
+   3.811440324969349*^9}, {3.8114437339208584`*^9, 3.8114437538916793`*^9}}],
 
 Cell[BoxData[""], "Input",
- CellChangeTimes->{{3.811252221286049*^9, 3.811252223460253*^9}}]
+ CellChangeTimes->{{3.811252221286049*^9, 3.811252223460253*^9}}],
+
+Cell[BoxData[""], "Input",
+ CellChangeTimes->{{3.8114373731805496`*^9, 3.811437373971672*^9}}],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{3.8114373470371704`*^9}]
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{766, 805},
-WindowMargins->{{-7, Automatic}, {Automatic, 0}},
+WindowSize->{766, 812},
+WindowMargins->{{Automatic, -7}, {Automatic, 0}},
 Magnification->1.25,
 FrontEndVersion->"11.0 for Microsoft Windows (64-bit) (July 28, 2016)",
 StyleDefinitions->"Default.nb"
@@ -2667,43 +2798,43 @@ Cell[CellGroupData[{
 Cell[580, 22, 170, 2, 127, "Title"],
 Cell[CellGroupData[{
 Cell[775, 28, 173, 2, 86, "Section"],
-Cell[951, 32, 471, 8, 113, "Text"],
+Cell[951, 32, 471, 8, 141, "Text"],
 Cell[CellGroupData[{
-Cell[1447, 44, 554, 15, 39, "Input"],
-Cell[2004, 61, 772, 27, 39, "Output"]
+Cell[1447, 44, 554, 15, 48, "Input"],
+Cell[2004, 61, 772, 27, 48, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[2813, 93, 856, 29, 63, "Input"],
-Cell[3672, 124, 1145, 37, 82, "Output"]
+Cell[2813, 93, 856, 29, 78, "Input"],
+Cell[3672, 124, 1145, 37, 102, "Output"]
 }, Open  ]],
-Cell[4832, 164, 1654, 45, 227, "Input"],
-Cell[6489, 211, 89, 1, 38, "Text"],
+Cell[4832, 164, 1654, 45, 283, "Input"],
+Cell[6489, 211, 89, 1, 47, "Text"],
 Cell[CellGroupData[{
-Cell[6603, 216, 558, 17, 130, "Input"],
-Cell[7164, 235, 207, 3, 37, "Output"],
-Cell[7374, 240, 205, 3, 37, "Output"]
+Cell[6603, 216, 558, 17, 162, "Input"],
+Cell[7164, 235, 207, 3, 46, "Output"],
+Cell[7374, 240, 205, 3, 46, "Output"]
 }, Open  ]],
-Cell[7594, 246, 974, 27, 130, "Text"],
-Cell[8571, 275, 199, 5, 37, "Input"],
+Cell[7594, 246, 974, 27, 162, "Text"],
+Cell[8571, 275, 199, 5, 46, "Input"],
 Cell[CellGroupData[{
-Cell[8795, 284, 282, 8, 72, "Input"],
-Cell[9080, 294, 816, 27, 55, "Output"]
+Cell[8795, 284, 282, 8, 90, "Input"],
+Cell[9080, 294, 816, 27, 68, "Output"]
 }, Open  ]],
-Cell[9911, 324, 190, 5, 37, "Input"],
+Cell[9911, 324, 190, 5, 46, "Input"],
 Cell[CellGroupData[{
-Cell[10126, 333, 210, 6, 72, "Input"],
-Cell[10339, 341, 791, 27, 55, "Output"]
+Cell[10126, 333, 210, 6, 90, "Input"],
+Cell[10339, 341, 791, 27, 68, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[11167, 373, 377, 13, 72, "Input"],
-Cell[11547, 388, 271, 9, 48, "Output"]
+Cell[11167, 373, 377, 13, 90, "Input"],
+Cell[11547, 388, 271, 9, 60, "Output"]
 }, Open  ]],
-Cell[11833, 400, 200, 4, 78, "Text"],
+Cell[11833, 400, 200, 4, 97, "Text"],
 Cell[CellGroupData[{
-Cell[12058, 408, 126, 2, 46, "Input"],
-Cell[12187, 412, 269, 9, 48, "Output"]
+Cell[12058, 408, 126, 2, 57, "Input"],
+Cell[12187, 412, 269, 9, 60, "Output"]
 }, Open  ]],
-Cell[12471, 424, 338, 6, 141, "Text"]
+Cell[12471, 424, 338, 6, 176, "Text"]
 }, Closed]],
 Cell[CellGroupData[{
 Cell[12846, 435, 120, 1, 68, "Section"],
@@ -2721,32 +2852,34 @@ Cell[15317, 515, 254, 8, 66, "Output"]
 }, Open  ]],
 Cell[15586, 526, 435, 7, 113, "Text"],
 Cell[16024, 535, 1063, 34, 191, "Input"],
-Cell[17090, 571, 158, 2, 38, "Text"],
-Cell[17251, 575, 260, 7, 66, "Input"],
-Cell[17514, 584, 127, 1, 38, "Text"],
+Cell[17090, 571, 158, 2, 47, "Text"],
+Cell[17251, 575, 260, 7, 82, "Input"],
+Cell[17514, 584, 127, 1, 47, "Text"],
 Cell[CellGroupData[{
-Cell[17666, 589, 125, 2, 61, "Input"],
-Cell[17794, 593, 93, 2, 54, "Output"]
+Cell[17666, 589, 125, 2, 76, "Input"],
+Cell[17794, 593, 93, 2, 67, "Output"]
 }, Open  ]],
-Cell[17902, 598, 117, 1, 38, "Text"],
-Cell[18022, 601, 198, 2, 38, "Text"],
+Cell[17902, 598, 117, 1, 47, "Text"],
+Cell[18022, 601, 198, 2, 47, "Text"],
 Cell[CellGroupData[{
-Cell[18245, 607, 300, 9, 83, "Input"],
-Cell[18548, 618, 119, 1, 37, "Output"]
+Cell[18245, 607, 300, 9, 103, "Input"],
+Cell[18548, 618, 119, 1, 46, "Output"]
 }, Open  ]],
-Cell[18682, 622, 146, 1, 38, "Text"],
-Cell[18831, 625, 120, 1, 38, "Text"],
-Cell[18954, 628, 862, 27, 170, "Input"]
-}, Open  ]],
+Cell[18682, 622, 146, 1, 47, "Text"],
+Cell[18831, 625, 120, 1, 47, "Text"],
+Cell[18954, 628, 862, 27, 212, "Input"]
+}, Closed]],
 Cell[CellGroupData[{
-Cell[19853, 660, 109, 1, 86, "Section"],
-Cell[19965, 663, 632, 17, 118, "Text"],
-Cell[20600, 682, 197, 4, 63, "Text"],
-Cell[20800, 688, 83, 1, 38, "Text"],
-Cell[20886, 691, 118031, 1939, 355, "Input"],
-Cell[138920, 2632, 124, 2, 40, "Input"],
-Cell[139047, 2636, 277, 5, 63, "Text"],
-Cell[139327, 2643, 92, 1, 37, "Input"]
+Cell[19853, 660, 184, 2, 68, "Section"],
+Cell[20040, 664, 599, 16, 118, "Text"],
+Cell[20642, 682, 197, 4, 63, "Text"],
+Cell[20842, 688, 83, 1, 38, "Text"],
+Cell[20928, 691, 118031, 1939, 355, "Input"],
+Cell[138962, 2632, 779, 18, 113, "Text"],
+Cell[139744, 2652, 3785, 114, 438, "Text"],
+Cell[143532, 2768, 92, 1, 37, "Input"],
+Cell[143627, 2771, 94, 1, 37, "Input"],
+Cell[143724, 2774, 89, 1, 62, "Input"]
 }, Open  ]]
 }, Open  ]]
 }
