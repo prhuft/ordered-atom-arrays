@@ -24,6 +24,8 @@ def soln_to_csv(fname, data, labels):
 
         for d,l in zip(data, labels):
             writer.writerow([l] + list(d))
+            
+    print(f"wrote data to {fname}")
 
 def soln_from_csv(fname):
     """
