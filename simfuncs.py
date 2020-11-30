@@ -62,3 +62,36 @@ def soln_from_csv(fname):
             
     return data, labels
     
+## data checks and sanitization
+
+def is_complexable(x):
+    try:
+        complex(x)
+    except ValueError:
+        return False
+    else:
+        return True
+
+def is_numeric(x):
+    test = lambda x: np.array([is_complexable(a) for a in x]).prod() 
+    try:
+        l = len(x)
+        x = np.array(x).flatten()
+        return bool(test(x))
+    except TypeError:
+        return bool(test([x]))
+        
+def is_scalar_2D(xarr):
+    """check if 2D array passed in has non-list like elements"""
+    
+    dimx,dimy = np.array(xarr).shape
+    for i in range(dimx):
+        for j in range(dimy):
+            try:
+                len(xarr[i,j])
+                print(f"non-scalar like at elem ({i},{j}): {xarr[i,j]}")
+                return False
+            except Exception as e:
+                pass
+    return True
+    
